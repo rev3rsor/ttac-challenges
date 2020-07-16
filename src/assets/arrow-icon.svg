@@ -1,0 +1,14 @@
+<svg height="512" width="512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      polyline {
+        stroke: #444444;
+      }
+
+      polyline:focus {
+        stroke: black;
+      }
+    </style>
+  </defs>
+  <polyline points="0, 128 256, 384 512, 128" fill="none" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
