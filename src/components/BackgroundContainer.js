@@ -5,8 +5,8 @@ const BackgroundContainer = styled.div`
   background-size: cover;
   background-position: center;
   height: 100%;
+  overflow: auto;
   text-align: center;
-  width: 100%;
 `
 
 export default BackgroundContainer

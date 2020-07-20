@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
   #___gatsby,
   #gatsby-focus-wrapper {
     height: 100%;
+    overflow: auto;
   }
 
   body,
@@ -31,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 4rem; 
+    font-size: 5rem; 
   }
 
   h2 {

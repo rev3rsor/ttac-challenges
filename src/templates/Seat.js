@@ -38,7 +38,15 @@ const HomeLink = styled.button`
 `
 
 const P = styled.p`
-  font-size: 2.5rem;
+  font-size: 4rem;
+  padding-bottom: 12px;
+`
+
+const TextHalo = styled.div`
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  margin: 0 auto;
+  max-width: 80%;
 `
 
 const Seat = ({ data }) => {
@@ -47,8 +55,10 @@ const Seat = ({ data }) => {
   return (
     <>
       <Background type={type}>
-        <h1>{data.googleSheetSheet1Row.name}</h1>
-        <P>{data.googleSheetSheet1Row.instructions}</P>
+        <TextHalo>
+          <h1>{data.googleSheetSheet1Row.name}</h1>
+          <P>{data.googleSheetSheet1Row.instructions}</P>
+        </TextHalo>
         <HomeLink onClick={() => window.history.back()}>Back to main</HomeLink>
       </Background>
     </>

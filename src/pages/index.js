@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import { darken } from "polished"
-import React, { useLayoutEffect, useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { useQueryParam, NumberParam } from "use-query-params"
 
@@ -57,12 +57,6 @@ const H1 = styled.h1`
   margin: 0;
 `
 
-const LeaderboardIframe = styled.iframe`
-  border: none;
-  height: 500px;
-  margin: 20px auto;
-  width: 100%;
-`
 const SeatEventButton = styled.button`
   background-color: ${props => (props.active ? "white" : "#a0a0a0")};
   border: 3px solid black;
@@ -113,7 +107,9 @@ const SeatEventLinkContainer = styled.div`
   margin: 20px;
 `
 
-const TitleImg = styled.img``
+const TitleImg = styled.img`
+  max-width: 100%;
+`
 
 const WheelIframe = styled.iframe`
   border: none;
@@ -131,27 +127,6 @@ export default () => {
   const handleSeatEventClick = evt =>
     !seatEventNumber && !seatEventSuit && evt.preventDefault()
 
-  // const reloadLeaderboard = () => {
-  //   const leaderboard = document.getElementById("leaderboard")
-  //   console.log(leaderboard)
-
-  //   const iframeDocument = leaderboard.contentDocument
-  //   console.log(iframeDocument)
-  //   iframeDocument.querySelector(".navbar").remove()
-  //   iframeDocument.querySelector(".pricing-header").remove()
-
-  //   const cardContainer = iframeDocument.querySelector(".card-deck")
-  //   cardContainer.style.flexDirection = "row"
-  //   cardContainer.style.flexFlow = "initial"
-  // }
-
-  // useEffect(() => reloadLeaderboard())
-
-  // useLayoutEffect(() => {
-  //   window.addEventListener("load", reloadLeaderboard)
-  //   return () => window.removeEventListener("load", reloadLeaderboard)
-  // })
-
   return (
     <Background>
       <H1>
@@ -160,10 +135,6 @@ export default () => {
         </Link>
       </H1>
       <Container>
-        {/* <LeaderboardIframe
-          id="leaderboard"
-          src="https://tls.jerryleung.me/app/scoreboard.php"
-        /> */}
         <WheelIframe
           src="https://wheeldecide.com/e.php?c1=Group+Challenge&c2=Individual+Challenge&c3=Group+Challenge&c4=Individual+Challenge&c5=Group+Challenge&c6=Individual+Challenge&c7=Group+Challenge&c8=Individual+Challenge&cols=84BCF0,F0E984&t=Spin+the+Wheel%21&time=5&width=500"
           width="500"
