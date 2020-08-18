@@ -117,15 +117,19 @@ const WheelIframe = styled.iframe`
 `
 
 export default () => {
-  const [groupNum] = useQueryParam("g", NumberParam)
-  const [individualNum] = useQueryParam("i", NumberParam)
-  const [partyNum] = useQueryParam("p", NumberParam)
+  const [groupNum = 1] = useQueryParam("g", NumberParam)
+  const [individualNum = 1] = useQueryParam("i", NumberParam)
+  const [partyNum = 1] = useQueryParam("p", NumberParam)
 
   const [seatEventNumber, setSeatEventNumber] = useState(0)
   const [seatEventSuit, setSeatEventSuit] = useState("")
 
-  const handleSeatEventClick = evt =>
-    !seatEventNumber && !seatEventSuit && evt.preventDefault()
+  const handleSeatEventClick = evt => {
+    if (!seatEventNumber || !seatEventSuit) {
+      evt.preventDefault()
+      alert("Please select both a number and a suit.")
+    }
+  }
 
   return (
     <Background>
